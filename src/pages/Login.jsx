@@ -9,13 +9,12 @@ function Login(){
     const[password,setPassword] = useState("");
 
     const handleLogin =(e) =>{
-        e.prevent.default();
+        e.preventDefault();
 
         if (email&&password){
             localStorage.setItem("isLoggedIn","true");
             navigate("/home");
-        }
-        else{
+        }else{
             alert("Please fill all fields");
         }
     };
@@ -25,7 +24,7 @@ function Login(){
 
             <div className="login-box">
                 <h1>Instagram</h1>
-                <form onsubmit={handleLogin}>
+                <form onSubmit={handleLogin}>
                     <input 
                     type="email"
                     placeholder="Enter your Email"
