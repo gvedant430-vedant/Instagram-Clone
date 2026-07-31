@@ -16,3 +16,11 @@
     max-width:650px;
     padding:30px;
 }
+
+.profile-section{
+    width: 300px;
+    padding: 30px 20px;
+    position: sticky;
+    top: 80px;
+    height: fit-content;
+}

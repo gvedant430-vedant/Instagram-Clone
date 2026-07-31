@@ -2,6 +2,8 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Stories from "../components/Stories";
 import Post from "../components/Post";
+import ProfileCard from "../components/ProfileCard";
+
 import "../css/home.css";
 
 function Home(){
@@ -15,8 +17,11 @@ function Home(){
                 <main className="feed">
                     <Stories />
                     <Post/>
-                    <Post/>
+                    
                 </main>
+                <div className="profile-section">
+                    <ProfileCard />
+                </div>
             </div>
 
         </div>

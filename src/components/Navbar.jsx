@@ -8,7 +8,7 @@ import{
     FaUserCircle,
 } from "react-icons/fa";
 
-import "../css/Navbar.css";
+import "../css/navbar.css";
 
 function Navbar(){
     return(
@@ -32,8 +32,10 @@ function Navbar(){
                 <Link to="/explore">
                 <FaCompass />
                 </Link>
-
+                
+                <Link to="#">
                 <FaHeart />
+                </Link>
 
                 <Link to="/profile">
                 <FaUserCircle />
