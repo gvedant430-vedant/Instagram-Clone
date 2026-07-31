@@ -12,7 +12,7 @@ const stories = [
   },
   {
     id: 3,
-    username: "priya",
+    username: "swapnil",
   },
   {
     id: 4,
@@ -20,7 +20,7 @@ const stories = [
   },
   {
     id: 5,
-    username: "neha",
+    username: "mohit",
   },
 ];
 
