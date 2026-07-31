@@ -19,7 +19,7 @@ function Sidebar(){
             <div>Home</div>
             </NavLink>
 
-            <NavLink to="/explore" className="menu-items">
+            <NavLink to="/explore" className="menu-item">
             <FaCompass/>
             <div>Explore</div>
             </NavLink>
