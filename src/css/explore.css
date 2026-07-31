@@ -1,0 +1,13 @@
+.explore-grid{
+    margin-left:260px;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.explore-grid img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
