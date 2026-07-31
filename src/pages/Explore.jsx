@@ -9,6 +9,9 @@ function Explore() {
     "https://picsum.photos/300?4",
     "https://picsum.photos/300?5",
     "https://picsum.photos/300?6",
+    "https://picsum.photos/300?7",
+    "https://picsum.photos/300?8",
+    "https://picsum.photos/300?9",
   ];
 
   return (
