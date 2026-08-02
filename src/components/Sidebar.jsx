@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import {NavLink , useNavigate} from "react-router-dom";
 import{
     FaHome,
     FaSearch,
@@ -11,6 +11,12 @@ import{
 import "../css/Sidebar.css";
 
 function Sidebar(){
+    const navigate=useNavigate();
+
+    const handleLogout =() =>{
+        navigate("/");
+    };
+
     return(
         <div className="sidebar">
 
@@ -39,7 +45,7 @@ function Sidebar(){
                 <div>Notification</div>
             </div>
 
-            <div className="menu-item">
+            <div className="menu-item" onClick={handleLogout}>
                 <FaSignOutAlt />
                 <div>Logout</div>
             </div>
