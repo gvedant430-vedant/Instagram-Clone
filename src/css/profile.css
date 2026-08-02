@@ -87,3 +87,25 @@
     color:#555;
     font-size:15px;
 }
+
+@media (max-width:768px){
+
+    .profile-content{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .profile-avatar{
+        width:100px;
+        height:100px;
+    }
+
+    .profile-page-stats{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .profile-card{
+        width:100%;
+    }
+}

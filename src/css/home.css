@@ -24,3 +24,21 @@
     top: 80px;
     height: fit-content;
 }
+
+@media (max-width:768px){
+
+    .home-layout{
+        flex-direction:column;
+    }
+
+    .feed{
+        margin-left:0;
+        max-width:100%;
+        padding:15px;
+        margin-bottom:80px;
+    }
+
+    .profile-section{
+        display:none;
+    }
+}

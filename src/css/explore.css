@@ -11,3 +11,27 @@
     height:250px;
     object-fit:cover;
 }
+
+@media (max-width:768px){
+
+    .explore-grid{
+        margin-left:0;
+        padding:15px;
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .explore-grid img{
+        height:180px;
+    }
+}
+
+@media (max-width:480px){
+
+    .explore-grid{
+        grid-template-columns:1fr;
+    }
+
+    .explore-grid img{
+        height:220px;
+    }
+}

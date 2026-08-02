@@ -39,3 +39,32 @@
     font-weight:bold;
     background:#efefef;
 }
+
+@media (max-width:768px){
+
+    .sidebar{
+        position:fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:65px;
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        border-top:1px solid #ddd;
+        border-right:none;
+        background:#fff;
+        z-index:1000;
+        padding:0;
+    }
+
+    .menu-item{
+        flex-direction:column;
+        font-size:12px;
+        gap:4px;
+    }
+
+    .menu-item div{
+        font-size:11px;
+    }
+}
