@@ -20,9 +20,12 @@ function Navbar(){
             </div>
             
             <div className="navbar-search">
+               <Link to="/search">
                 <FaSearch className="search-icon"/>
-                <input type="text" placeholder="Search" />
-                <NavLink/>
+                </Link>
+                <input type="text" 
+                placeholder="Search" 
+                onFocus={()=>window.location.href="/search"}/>
             </div>
 
             <div className="navbar-icons">
