@@ -1,3 +1,5 @@
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 import { useState } from "react";
 import users from "../data/users";
 import "../css/search.css";
@@ -10,29 +12,36 @@ function Search() {
   );
 
   return (
-    <div className="search-page">
+    <>
+    <h1>test</h1>
+      <Navbar />
 
-      <h2>Search Users</h2>
+      <div className="search-layout">
+        <Sidebar />
 
-      <input
-        type="text"
-        placeholder="Search..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
+        <div className="search-page">
+          <h2>Search Users</h2>
 
-      {filteredUsers.length === 0 ? (
-        <p>No users found.</p>
-      ) : (
-        filteredUsers.map((user) => (
-          <div className="user-card" key={user.id}>
-            <img src={user.image} alt={user.username} />
-            <span>{user.username}</span>
-          </div>
-        ))
-      )}
+          <input
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
 
-    </div>
+          {filteredUsers.length === 0 ? (
+            <p>No users found.</p>
+          ) : (
+            filteredUsers.map((user) => (
+              <div className="user-card" key={user.id}>
+                <img src={user.image} alt={user.username} />
+                <span>{user.username}</span>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+    </>
   );
 }
 

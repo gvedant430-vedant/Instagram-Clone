@@ -48,3 +48,13 @@
     font-size:13px;
     margin-top:5px;
 }
+.notification-layout{
+    display: flex;
+}
+
+.notifications-container{
+    margin-left: 250px;   /* Sidebar width */
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
+}

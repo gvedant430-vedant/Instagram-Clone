@@ -8,7 +8,7 @@ import{
     FaSignOutAlt,
 } from "react-icons/fa";
 
-import "../css/Sidebar.css";
+import "../css/sidebar.css";
 
 function Sidebar(){
     const navigate=useNavigate();
