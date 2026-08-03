@@ -13,7 +13,7 @@ function Search() {
 
   return (
     <>
-    <h1>test</h1>
+    
       <Navbar />
 
       <div className="search-layout">
