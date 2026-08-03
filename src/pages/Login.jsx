@@ -2,49 +2,60 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/login.css";
 
-function Login(){
-    const navigate =useNavigate();
+function Login() {
 
-    const[email,setEmail] = useState("");
-    const[password,setPassword] = useState("");
+  const navigate = useNavigate();
 
-    const handleLogin =(e) =>{
-        e.preventDefault();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-        if (email&&password){
-            localStorage.setItem("isLoggedIn","true");
-            navigate("/home");
-        }else{
-            alert("Please fill all fields");
-        }
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    return(
-        <div className="login-container">
+    if (username === "" || password === "") {
+      alert("Please fill all fields");
+      return;
+    }
 
-            <div className="login-box">
-                <h1>Instagram</h1>
-                <form onSubmit={handleLogin}>
-                    <input 
-                    type="email"
-                    placeholder="Enter your Email"
-                    value={email}
-                    onChange={(e)=>setEmail(e.target.value)}/>
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("username", username);
 
-                    <input
-                    type="password"
-                    placeholder="Enter your Password"
-                    value={password}
-                    onChange={(e)=>setPassword(e.target.value)}/>
+    navigate("/home");
+  };
 
-                    <button type="submit">
-                        Log In
-                    </button>
+  return (
+    <div className="login-container">
 
-                    </form>
-            </div>
-        </div>
-    )
+      <div className="login-box">
+
+        <h1 className="logo">Instagram</h1>
+
+        <form onSubmit={handleSubmit}>
+
+          <input
+            type="text"
+            placeholder="Username, email or phone"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <button type="submit">
+            Log In
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  );
 }
 
 export default Login;
