@@ -18,7 +18,7 @@ function App(){
             <Route path="/explore" element={<Explore />}/>
             <Route path="/search" element={<Search/>}/>
             <Route path="/notifications" element={<Notifications/>}/>
-            <Route path="/story/:id " element={<StoryViewer />} />
+            <Route path="/story/:id"element={<StoryViewer />} />
             </Routes>
             </BrowserRouter>
     );

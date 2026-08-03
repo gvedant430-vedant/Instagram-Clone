@@ -3,7 +3,7 @@ import "../css/story.css";
 
 function Story({ id,username }) {
   return (
-    <Link to={`/story/${id}`}classname="story-link">
+    <Link to={`/story/${id}`}className="story-link">
     <div className="story">
       <div className="story-avatar">
         {username.charAt(0).toUpperCase()}

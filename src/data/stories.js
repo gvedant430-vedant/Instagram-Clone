@@ -13,7 +13,7 @@ const stories = [
   },
   {
     id: 3,
-    username: "priya",
+    username: "swapnil",
     image: "https://picsum.photos/500/700?random=3",
     caption: "Coffee Time ☕",
   },
@@ -25,7 +25,7 @@ const stories = [
   },
   {
     id: 5,
-    username: "neha",
+    username: "mohit",
     image: "https://picsum.photos/500/700?random=5",
     caption: "Travel ❤️",
   },
