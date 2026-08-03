@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import{
     FaInstagram,
     FaHome,
@@ -22,6 +22,7 @@ function Navbar(){
             <div className="navbar-search">
                 <FaSearch className="search-icon"/>
                 <input type="text" placeholder="Search" />
+                <NavLink/>
             </div>
 
             <div className="navbar-icons">

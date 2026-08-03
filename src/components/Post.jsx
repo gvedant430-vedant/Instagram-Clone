@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Comments from "./Comments";
 import {
   FaHeart,
   FaRegHeart,
@@ -106,6 +107,8 @@ function PostCard({ post }) {
       <p className="caption">
         <strong>{post.username}</strong> {post.caption}
       </p>
+
+      <Comments/>
     </div>
   );
 }

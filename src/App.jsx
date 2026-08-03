@@ -4,8 +4,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
-
-
+import Search from "./pages/search";
 function App(){
     return(
         <BrowserRouter>
@@ -14,6 +13,8 @@ function App(){
             <Route path="/home" element={<Home />}/>
             <Route path="/profile" element={<Profile />}/>
             <Route path="/explore" element={<Explore />}/>
+            <Route path="/search" element={<Search/>}/>
+            
             </Routes>
             </BrowserRouter>
     );

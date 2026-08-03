@@ -35,11 +35,10 @@ function Sidebar(){
             <div>Profile</div>
             </NavLink>
 
-            <div className="menu-item">
-                <FaSearch />
-                <div>Search</div>
-            </div>
-
+           <NavLink to="/search" className="menu-item">
+  <FaSearch />
+  <span>Search</span>
+</NavLink>
             <div className="menu-item">
                 <FaHeart />
                 <div>Notification</div>
