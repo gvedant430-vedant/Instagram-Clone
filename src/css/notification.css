@@ -1,0 +1,50 @@
+.notifications-container{
+    max-width:600px;
+    margin:30px auto;
+    background:#fff;
+    border:1px solid #dbdbdb;
+    border-radius:10px;
+    padding:20px;
+}
+
+.notifications-container h2{
+    margin-bottom:20px;
+    font-size:24px;
+    border-bottom:1px solid #eee;
+    padding-bottom:10px;
+}
+
+.notification-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-bottom:1px solid #eee;
+    transition:0.3s;
+}
+
+.notification-card:hover{
+    background:#f8f8f8;
+}
+
+.notification-avatar{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.notification-text{
+    flex:1;
+}
+
+.notification-text p{
+    margin:0;
+    font-size:15px;
+}
+
+.notification-time{
+    color:gray;
+    font-size:13px;
+    margin-top:5px;
+}

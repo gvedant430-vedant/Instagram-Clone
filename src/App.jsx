@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import Search from "./pages/search";
+import Notifications from "./pages/notifications";
 function App(){
     return(
         <BrowserRouter>
@@ -14,7 +15,7 @@ function App(){
             <Route path="/profile" element={<Profile />}/>
             <Route path="/explore" element={<Explore />}/>
             <Route path="/search" element={<Search/>}/>
-            
+            <Route path="/notifications" element={<Notifications/>}/>
             </Routes>
             </BrowserRouter>
     );

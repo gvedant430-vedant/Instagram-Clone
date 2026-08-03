@@ -37,7 +37,7 @@ function Navbar(){
                 <FaCompass />
                 </Link>
                 
-                <Link to="#">
+                <Link to= "/notifications">
                 <FaHeart />
                 </Link>
 

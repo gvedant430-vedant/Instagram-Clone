@@ -35,14 +35,19 @@ function Sidebar(){
             <div>Profile</div>
             </NavLink>
 
-           <NavLink to="/search" className="menu-item">
-  <FaSearch />
-  <span>Search</span>
-</NavLink>
-            <div className="menu-item">
-                <FaHeart />
-                <div>Notification</div>
-            </div>
+           <NavLink
+            to="/search" 
+            className="menu-item">
+             <FaSearch />
+            <span>Search</span>
+               </NavLink>
+
+            <NavLink 
+             to="/notifications" 
+             className="menu-item">
+               <FaHeart />
+            <span>Notifications</span>
+            </NavLink>
 
             <div className="menu-item" onClick={handleLogout}>
                 <FaSignOutAlt />
