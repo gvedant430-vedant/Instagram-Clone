@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import "../css/story.css";
 
-function Story({ username }) {
+function Story({ id,username }) {
   return (
+    <Link to={`/story/${id}`}classname="story-link">
     <div className="story">
       <div className="story-avatar">
         {username.charAt(0).toUpperCase()}
@@ -9,6 +11,7 @@ function Story({ username }) {
 
       <p>{username}</p>
     </div>
+    </Link>
   );
 }
 

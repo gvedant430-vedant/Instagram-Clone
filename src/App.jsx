@@ -6,6 +6,8 @@ import Profile from "./pages/Profile";
 import Explore from "./pages/Explore";
 import Search from "./pages/search";
 import Notifications from "./pages/notifications";
+import StoryViewer from "./pages/StoryViewer";
+
 function App(){
     return(
         <BrowserRouter>
@@ -16,6 +18,7 @@ function App(){
             <Route path="/explore" element={<Explore />}/>
             <Route path="/search" element={<Search/>}/>
             <Route path="/notifications" element={<Notifications/>}/>
+            <Route path="/story/:id " element={<StoryViewer />} />
             </Routes>
             </BrowserRouter>
     );

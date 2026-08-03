@@ -30,7 +30,7 @@ function Stories() {
       {stories.map((story) => (
         <Story
           key={story.id}
-        
+          id={story.id}
           username={story.username}
         />
       ))}
