@@ -3,26 +3,24 @@
     min-height:100vh;
 }
 
-
 .home-layout{
     display:flex;
+    margin-top:70px;   /* Navbar ki height */
 }
 
-
-
 .feed{
-    margin-left:260px;
-    width:100%;
+    flex:1;
+    margin-left:240px; /* Sidebar jitni width */
     max-width:650px;
-    padding:30px;
+    padding:20px;
 }
 
 .profile-section{
-    width: 300px;
-    padding: 30px 20px;
-    position: sticky;
-    top: 80px;
-    height: fit-content;
+    width:300px;
+    padding:20px;
+    position:sticky;
+    top:90px;
+    height:fit-content;
 }
 
 @media (max-width:768px){

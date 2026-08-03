@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Stories from "../components/Stories";
 import Post from "../components/Post";
 import ProfileCard from "../components/ProfileCard";
-
+import SuggestedUsers from "../components/SuggestedUsers";
 import "../css/home.css";
 
 function Home(){
@@ -19,9 +19,12 @@ function Home(){
                     <Post/>
                     
                 </main>
+            
+
                 <div className="profile-section">
-                    <ProfileCard />
-                </div>
+                  <ProfileCard />
+                      <SuggestedUsers />
+                       </div>
             </div>
 
         </div>
