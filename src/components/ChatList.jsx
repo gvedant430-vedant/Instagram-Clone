@@ -14,16 +14,30 @@ function ChatList({
         <div
           key={chat.id}
           className={`chat-item ${
-            selectedChat?.id === chat.id ? "active" : ""
+            selectedChat?.id === chat.id
+              ? "active"
+              : ""
           }`}
           onClick={() => setSelectedChat(chat)}
         >
+
           <img
             src={chat.image}
             alt={chat.username}
           />
 
-          <span>{chat.username}</span>
+          <div>
+            <strong>{chat.username}</strong>
+
+            <p>
+              {chat.messages.length > 0
+                ? chat.messages[
+                    chat.messages.length - 1
+                  ].text
+                : "No messages yet"}
+            </p>
+          </div>
+
         </div>
       ))}
 

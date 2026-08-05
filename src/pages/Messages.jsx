@@ -5,34 +5,59 @@ import Sidebar from "../components/Sidebar";
 import ChatList from "../components/ChatList";
 import ChatWindow from "../components/ChatWindow";
 
-import chats from "../data/chats";
+import chatsData from "../data/chats";
 
 import "../css/messages.css";
 
 function Messages() {
 
-  const [selectedChat, setSelectedChat] = useState(chats[0]);
+  // Saari chats React state me
+  const [chats, setChats] = useState(chatsData);
 
+  // Currently selected user
+  const [selectedChatId, setSelectedChatId] = useState(
+    chatsData[0]?.id
+  );
+
+  // Input message
   const [message, setMessage] = useState("");
-const handleSend = (e) => {
-  e.preventDefault();
 
-  if (message.trim() === "") return;
+  // Selected chat find karo
+  const selectedChat = chats.find(
+    (chat) => chat.id === selectedChatId
+  );
 
-  const newMessage = {
-    id: Date.now(),
-    text: message,
-    sender: "me",
+  // Send Message
+  const handleSend = (e) => {
+    e.preventDefault();
+
+    if (!message.trim()) {
+      return;
+    }
+
+    const newMessage = {
+      id: Date.now(),
+      text: message,
+      sender: "me",
+    };
+
+    setChats((previousChats) =>
+      previousChats.map((chat) =>
+        chat.id === selectedChatId
+          ? {
+              ...chat,
+              messages: [
+                ...chat.messages,
+                newMessage,
+              ],
+            }
+          : chat
+      )
+    );
+
+    setMessage("");
   };
 
-  selectedChat.messages.push(newMessage);
-
-  setSelectedChat({
-    ...selectedChat,
-  });
-
-  setMessage("");
-};
   return (
     <>
       <Navbar />
@@ -44,7 +69,9 @@ const handleSend = (e) => {
         <ChatList
           chats={chats}
           selectedChat={selectedChat}
-          setSelectedChat={setSelectedChat}
+          setSelectedChat={(chat) =>
+            setSelectedChatId(chat.id)
+          }
         />
 
         <ChatWindow

@@ -1,10 +1,11 @@
 import "../css/chatwindow.css";
 
-function ChatWindow({ 
-  chat, 
-  message, 
-  setMessage, 
-  handleSend }) {
+function ChatWindow({
+  chat,
+  message,
+  setMessage,
+  handleSend,
+}) {
 
   if (!chat) {
     return (
@@ -19,12 +20,14 @@ function ChatWindow({
 
       {/* Header */}
       <div className="chat-header">
+
         <img
           src={chat.image}
           alt={chat.username}
         />
 
         <h3>{chat.username}</h3>
+
       </div>
 
       {/* Messages */}
@@ -49,9 +52,11 @@ function ChatWindow({
 
         <input
           type="text"
-          placeholder="Message..."
+          placeholder={`Message ${chat.username}...`}
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={(e) =>
+            setMessage(e.target.value)
+          }
         />
 
         <button type="submit">
