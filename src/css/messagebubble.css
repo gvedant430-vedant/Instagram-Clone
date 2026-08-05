@@ -1,16 +1,18 @@
-.message{
-    max-width:300px;
-    padding:10px 15px;
-    margin:10px 0;
-    border-radius:20px;
+.message {
+    max-width: 250px;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 20px;
+    width: fit-content;
 }
 
-.message.me{
-    background:#0095f6;
-    color:#fff;
-    margin-left:auto;
+.message.me {
+    margin-left: auto;
+    background: #0095f6;
+    color: white;
 }
 
-.message.other{
-    background:#efefef;
+.message.other {
+    background: #efefef;
+    color: black;
 }

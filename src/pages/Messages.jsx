@@ -10,8 +10,29 @@ import chats from "../data/chats";
 import "../css/messages.css";
 
 function Messages() {
+
   const [selectedChat, setSelectedChat] = useState(chats[0]);
 
+  const [message, setMessage] = useState("");
+const handleSend = (e) => {
+  e.preventDefault();
+
+  if (message.trim() === "") return;
+
+  const newMessage = {
+    id: Date.now(),
+    text: message,
+    sender: "me",
+  };
+
+  selectedChat.messages.push(newMessage);
+
+  setSelectedChat({
+    ...selectedChat,
+  });
+
+  setMessage("");
+};
   return (
     <>
       <Navbar />
@@ -28,6 +49,9 @@ function Messages() {
 
         <ChatWindow
           chat={selectedChat}
+          message={message}
+          setMessage={setMessage}
+          handleSend={handleSend}
         />
 
       </div>
@@ -35,4 +59,4 @@ function Messages() {
   );
 }
 
-export default Messages;    
+export default Messages;

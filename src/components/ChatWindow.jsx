@@ -1,7 +1,10 @@
-import MessageBubble from "./MessageBubble";
 import "../css/chatwindow.css";
 
-function ChatWindow({ chat }) {
+function ChatWindow({ 
+  chat, 
+  message, 
+  setMessage, 
+  handleSend }) {
 
   if (!chat) {
     return (
@@ -14,28 +17,48 @@ function ChatWindow({ chat }) {
   return (
     <div className="chat-window">
 
+      {/* Header */}
       <div className="chat-header">
-
         <img
           src={chat.image}
           alt={chat.username}
         />
 
         <h3>{chat.username}</h3>
-
       </div>
 
+      {/* Messages */}
       <div className="chat-messages">
 
         {chat.messages.map((msg) => (
-          <MessageBubble
+          <div
             key={msg.id}
-            text={msg.text}
-            sender={msg.sender}
-          />
+            className={`message ${msg.sender}`}
+          >
+            {msg.text}
+          </div>
         ))}
 
       </div>
+
+      {/* Input */}
+      <form
+        className="message-input"
+        onSubmit={handleSend}
+      >
+
+        <input
+          type="text"
+          placeholder="Message..."
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+
+        <button type="submit">
+          Send
+        </button>
+
+      </form>
 
     </div>
   );
