@@ -15,11 +15,18 @@ function ChatWindow({ chat }) {
     <div className="chat-window">
 
       <div className="chat-header">
-        <img src={chat.image} alt={chat.username} />
+
+        <img
+          src={chat.image}
+          alt={chat.username}
+        />
+
         <h3>{chat.username}</h3>
+
       </div>
 
       <div className="chat-messages">
+
         {chat.messages.map((msg) => (
           <MessageBubble
             key={msg.id}
@@ -27,6 +34,7 @@ function ChatWindow({ chat }) {
             sender={msg.sender}
           />
         ))}
+
       </div>
 
     </div>

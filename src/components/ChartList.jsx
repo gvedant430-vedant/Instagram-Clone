@@ -1,6 +1,10 @@
 import "../css/chatlist.css";
 
-function ChatList({ chats, selectedChat, setSelectedChat }) {
+function ChatList({
+  chats,
+  selectedChat,
+  setSelectedChat,
+}) {
   return (
     <div className="chat-list">
 
@@ -14,7 +18,10 @@ function ChatList({ chats, selectedChat, setSelectedChat }) {
           }`}
           onClick={() => setSelectedChat(chat)}
         >
-          <img src={chat.image} alt={chat.username} />
+          <img
+            src={chat.image}
+            alt={chat.username}
+          />
 
           <span>{chat.username}</span>
         </div>

@@ -1,13 +1,15 @@
 import { useState } from "react";
+
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import ChatList from "../components/ChatList";
 import ChatWindow from "../components/ChatWindow";
+
 import chats from "../data/chats";
+
 import "../css/messages.css";
 
 function Messages() {
-
   const [selectedChat, setSelectedChat] = useState(chats[0]);
 
   return (
@@ -29,9 +31,8 @@ function Messages() {
         />
 
       </div>
-
     </>
   );
 }
 
-export default Messages;
+export default Messages;    
