@@ -9,6 +9,7 @@ import{
     FaComments,
     FaPlus,
 } from "react-icons/fa";
+import { CiSettings } from "react-icons/ci";
 
 import "../css/sidebar.css";
 
@@ -61,6 +62,13 @@ function Sidebar(){
              className="menu-item">
                <FaHeart />
             <span>Notifications</span>
+            </NavLink>
+
+            <NavLink
+            to="/settings"
+            className="menu-item">
+                <CiSettings />
+                <span>Settings</span>
             </NavLink>
 
             <div className="menu-item" onClick={handleLogout}>

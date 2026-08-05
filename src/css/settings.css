@@ -1,0 +1,219 @@
+/* Main Layout */
+
+.settings-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+
+/* Settings Container */
+
+.settings-container {
+  margin-left: 280px;
+
+  width: 650px;
+
+  margin-top: 30px;
+  margin-bottom: 50px;
+
+  background: #fff;
+
+  border: 1px solid #dbdbdb;
+
+  border-radius: 10px;
+
+  padding: 25px;
+}
+
+
+/* Heading */
+
+.settings-container h2 {
+  margin: 0 0 30px;
+
+  font-size: 24px;
+
+  color: #262626;
+}
+
+
+/* Section */
+
+.settings-section {
+  margin-bottom: 30px;
+}
+
+.settings-section h3 {
+  font-size: 16px;
+
+  color: #262626;
+
+  margin-bottom: 10px;
+}
+
+
+/* Settings Item */
+
+.settings-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 15px 5px;
+
+  border-bottom: 1px solid #eee;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.settings-item:hover {
+  background: #fafafa;
+}
+
+
+/* Item Text */
+
+.settings-item strong {
+  font-size: 15px;
+
+  color: #262626;
+}
+
+.settings-item p {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: #777;
+}
+
+
+/* Arrow */
+
+.settings-item > span {
+  font-size: 25px;
+
+  color: #888;
+}
+
+
+/* Toggle Switch */
+
+.switch {
+  position: relative;
+
+  width: 45px;
+
+  height: 24px;
+
+  display: inline-block;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+
+  inset: 0;
+
+  background: #ccc;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+/* Toggle Circle */
+
+.slider::before {
+  content: "";
+
+  position: absolute;
+
+  width: 18px;
+
+  height: 18px;
+
+  left: 3px;
+
+  top: 3px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  transition: 0.3s;
+}
+
+
+/* Checked */
+
+.switch input:checked + .slider {
+  background: #0095f6;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(21px);
+}
+
+
+/* Logout Button */
+
+.logout-settings {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #ed4956;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.logout-settings:hover {
+  opacity: 0.85;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .settings-container {
+    margin-left: 0;
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    margin-bottom: 80px;
+
+    border: none;
+
+    border-radius: 0;
+
+    padding: 20px;
+  }
+
+}

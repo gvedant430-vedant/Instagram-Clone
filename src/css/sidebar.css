@@ -1,69 +1,121 @@
-.sidebar{
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 240px;
-    height: calc(100vh - 70px);
+/* Sidebar */
 
-    background: #fff;
-    border-right: 1px solid #dbdbdb;
-    padding: 20px;
+.sidebar {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 240px;
+  height: 100vh;
+
+  background: #fff;
+
+  border-right: 1px solid #dbdbdb;
+
+  padding: 25px 15px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  z-index: 1000;
 }
 
-.menu-item{
-    display:flex;
-    align-items:center;
-    gap:15px;
 
-    padding:15px;
-    margin-bottom:10px;
+/* Menu Item */
 
-    text-decoration:none;
-    color:#000;
+.menu-item {
+  display: flex;
 
-    border-radius:10px;
-    cursor:pointer;
-    transition:0.3s;
+  align-items: center;
+
+  gap: 15px;
+
+  width: 100%;
+
+  padding: 12px 15px;
+
+  box-sizing: border-box;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  color: #262626;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
 }
 
-.menu-item:hover{
-    background:#f2f2f2;
+
+/* Icons */
+
+.menu-item svg {
+  font-size: 22px;
+
+  min-width: 22px;
 }
 
-.menu-item svg{
-    font-size:22px;
+
+/* Hover */
+
+.menu-item:hover {
+  background: #f2f2f2;
 }
 
-.menu-item.active{
-    font-weight:bold;
-    background:#efefef;
+
+/* Active */
+
+.menu-item.active {
+  background: #f2f2f2;
+
+  font-weight: 700;
 }
 
-@media (max-width:768px){
 
-    .sidebar{
-        position:fixed;
-        bottom:0;
-        left:0;
-        width:100%;
-        height:65px;
-        display:flex;
-        justify-content:space-around;
-        align-items:center;
-        border-top:1px solid #ddd;
-        border-right:none;
-        background:#fff;
-        z-index:1000;
-        padding:0;
-    }
+/* Logout */
 
-    .menu-item{
-        flex-direction:column;
-        font-size:12px;
-        gap:4px;
-    }
+.sidebar .menu-item:last-child {
+  margin-top: auto;
+}
 
-    .menu-item div{
-        font-size:11px;
-    }
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 70px;
+
+    padding: 20px 10px;
+
+    align-items: center;
+  }
+
+  .menu-item {
+    justify-content: center;
+
+    padding: 12px;
+
+    gap: 0;
+  }
+
+  .menu-item div,
+  .menu-item span {
+    display: none;
+  }
+
+  .menu-item svg {
+    font-size: 22px;
+  }
+
 }

@@ -10,6 +10,7 @@ import StoryViewer from "./pages/StoryViewer";
 import Messages from "./pages/Messages";
 import CreatePostPage from "./pages/CreatePostPage";
 import EditProfile from "./pages/EditProfile";
+import Settings from "./pages/Settings";
 function App() {
   return (
     <BrowserRouter>
@@ -38,14 +39,18 @@ function App() {
         />
 
         <Route
-  path="/create"
-  element={<CreatePostPage />}
-/>
+        path="/create"
+        element={<CreatePostPage />}
+        />
+        <Route
+        path="/edit-profile"
+        element={<EditProfile />}
+        />
 
-<Route
-  path="/edit-profile"
-  element={<EditProfile />}
-/>
+        <Route
+         path="/settings"
+         element={<Settings />}
+         />
 
       </Routes>
     </BrowserRouter>
