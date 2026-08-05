@@ -9,6 +9,7 @@ import Notifications from "./pages/notifications";
 import StoryViewer from "./pages/StoryViewer";
 import Messages from "./pages/Messages";
 import CreatePostPage from "./pages/CreatePostPage";
+import EditProfile from "./pages/EditProfile";
 function App() {
   return (
     <BrowserRouter>
@@ -39,6 +40,11 @@ function App() {
         <Route
   path="/create"
   element={<CreatePostPage />}
+/>
+
+<Route
+  path="/edit-profile"
+  element={<EditProfile />}
 />
 
       </Routes>

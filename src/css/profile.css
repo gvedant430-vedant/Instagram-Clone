@@ -1,111 +1,17 @@
-.profile-card{
-    width:280px;
-    background:#fff;
-    border:1px solid #ddd;
-    border-radius:12px;
-    padding:20px;
+.edit-profile-btn {
+  border: none;
+  background: #efefef;
+  padding: 8px 20px;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin: 10px 0 20px;
 }
 
-.profile-header{
-    display:flex;
-    align-items:center;
-    gap:15px;
-}
-
-.profile-image{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-}
-
-.profile-header h4{
-    margin:0;
-}
-
-.profile-header p{
-    margin:5px 0 0;
-    color:gray;
-    font-size:14px;
-}
-
-.profile-stats{
-    display:flex;
-    justify-content:space-between;
-    margin:20px 0;
-    text-align:center;
-}
-
-.profile-stats h4{
-    margin:0;
-}
-
-.profile-stats span{
-    font-size:14px;
-    color:gray;
-}
-
-.profile-btn{
-    width:100%;
-    padding:10px;
-    border:none;
-    border-radius:8px;
-    background:#0095f6;
-    color:white;
-    cursor:pointer;
-    font-weight:600;
-}
-
-.profile-content{
-    margin-left:280px;
-    padding:40px;
-    width:100%;
-}
-
-.profile-avatar{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:20px;
-}
-
-.profile-content h2{
-    margin-bottom:15px;
-}
-
-.profile-page-stats{
-    display:flex;
-    gap:30px;
-    margin-bottom:15px;
-}
-
-.profile-page-stats span{
-    font-size:16px;
-}
-
-.profile-content p{
-    color:#555;
-    font-size:15px;
-}
-
-@media (max-width:768px){
-
-    .profile-content{
-        margin-left:0;
-        padding:20px;
-    }
-
-    .profile-avatar{
-        width:100px;
-        height:100px;
-    }
-
-    .profile-page-stats{
-        flex-direction:column;
-        gap:10px;
-    }
-
-    .profile-card{
-        width:100%;
-    }
+.edit-profile-btn:hover {
+  background: #dbdbdb;
 }
