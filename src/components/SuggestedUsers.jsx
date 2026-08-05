@@ -1,57 +1,84 @@
+import { useState } from "react";
 import "../css/suggestedusers.css";
 
 const users = [
   {
     id: 1,
     username: "rahul",
-    name: "Rahul Sharma",
     image: "https://i.pravatar.cc/150?img=2",
   },
   {
     id: 2,
     username: "priya",
-    name: "Priya Singh",
     image: "https://i.pravatar.cc/150?img=3",
   },
   {
     id: 3,
     username: "aman",
-    name: "Aman Verma",
     image: "https://i.pravatar.cc/150?img=4",
   },
   {
     id: 4,
     username: "neha",
-    name: "Neha Gupta",
     image: "https://i.pravatar.cc/150?img=5",
   },
 ];
 
 function SuggestedUsers() {
+
+  const [following, setFollowing] = useState([]);
+
+  const handleFollow = (id) => {
+    setFollowing((previous) => {
+
+      if (previous.includes(id)) {
+        // Unfollow
+        return previous.filter(
+          (userId) => userId !== id
+        );
+      }
+
+      // Follow
+      return [...previous, id];
+    });
+  };
+
   return (
     <div className="suggested-users">
 
-      <div className="suggested-header">
-        <h4>Suggested for you</h4>
-        <span>See All</span>
-      </div>
+      <h3>Suggested for you</h3>
 
-      {users.map((user) => (
-        <div className="suggested-user" key={user.id}>
+      {users.map((user) => {
 
-          <div className="user-info">
-            <img src={user.image} alt={user.username} />
+        const isFollowing = following.includes(user.id);
 
-            <div>
-              <h5>{user.username}</h5>
-              <p>{user.name}</p>
+        return (
+          <div className="suggested-user" key={user.id}>
+
+            <img
+              src={user.image}
+              alt={user.username}
+            />
+
+            <div className="suggested-info">
+              <strong>{user.username}</strong>
+              <span>Suggested for you</span>
             </div>
+
+            <button
+              onClick={() => handleFollow(user.id)}
+              className={
+                isFollowing
+                  ? "following-btn"
+                  : "follow-btn"
+              }
+            >
+              {isFollowing ? "Following" : "Follow"}
+            </button>
+
           </div>
-
-          <button>Follow</button>
-
-        </div>
-      ))}
+        );
+      })}
 
     </div>
   );
