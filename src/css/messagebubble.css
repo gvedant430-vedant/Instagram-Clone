@@ -1,0 +1,16 @@
+.message{
+    max-width:300px;
+    padding:10px 15px;
+    margin:10px 0;
+    border-radius:20px;
+}
+
+.message.me{
+    background:#0095f6;
+    color:#fff;
+    margin-left:auto;
+}
+
+.message.other{
+    background:#efefef;
+}

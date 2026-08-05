@@ -1,0 +1,6 @@
+.messages-layout{
+    display:flex;
+    margin-top:70px;
+    margin-left:240px;
+    height:calc(100vh - 70px);
+}
