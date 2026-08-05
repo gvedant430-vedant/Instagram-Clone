@@ -8,7 +8,7 @@ import Search from "./pages/search";
 import Notifications from "./pages/notifications";
 import StoryViewer from "./pages/StoryViewer";
 import Messages from "./pages/Messages";
-
+import CreatePostPage from "./pages/CreatePostPage";
 function App() {
   return (
     <BrowserRouter>
@@ -35,6 +35,11 @@ function App() {
           path="/messages"
           element={<Messages />}
         />
+
+        <Route
+  path="/create"
+  element={<CreatePostPage />}
+/>
 
       </Routes>
     </BrowserRouter>

@@ -7,6 +7,7 @@ import{
     FaUserCircle,
     FaSignOutAlt,
     FaComments,
+    FaPlus,
 } from "react-icons/fa";
 
 import "../css/sidebar.css";
@@ -30,6 +31,14 @@ function Sidebar(){
             <FaCompass/>
             <div>Explore</div>
             </NavLink>
+
+            <NavLink
+            to="/create"
+            className="menu-item"
+            >
+                 <FaPlus />
+                  <span>Create</span>
+                  </NavLink>
 
             <NavLink to="/profile" className="menu-item">
             <FaUserCircle />
