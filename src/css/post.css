@@ -109,3 +109,148 @@
         height:auto;
     }
 }
+
+/* Save Icon */
+
+.save-icon {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  transition: 0.2s;
+}
+
+.save-icon:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+/* Saved */
+
+.save-icon .saved {
+  color: #000;
+}
+
+/* Share Icon */
+
+.share-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.share-icon:hover {
+  opacity: 0.7;
+}
+
+
+/* Share Background */
+
+.share-overlay {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 2000;
+}
+
+
+/* Share Box */
+
+.share-box {
+  width: 350px;
+
+  background: #fff;
+
+  border-radius: 15px;
+
+  padding: 20px;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Share Header */
+
+.share-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #ddd;
+
+  padding-bottom: 15px;
+}
+
+.share-header h3 {
+  margin: 0;
+
+  font-size: 18px;
+}
+
+.close-share {
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+
+/* Share Options */
+
+.share-options {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+.share-options button {
+  width: 100%;
+
+  border: none;
+
+  background: #f5f5f5;
+
+  padding: 12px;
+
+  border-radius: 8px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+.share-options button:hover {
+  background: #e9e9e9;
+}
+
+.comment-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.comment-icon:hover {
+  opacity: 0.7;
+}
+
+.comments-container {
+  padding: 0 15px 15px;
+}

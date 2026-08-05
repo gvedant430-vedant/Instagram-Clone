@@ -1,11 +1,14 @@
 import { useState } from "react";
 import Comments from "./Comments";
+
 import {
   FaHeart,
   FaRegHeart,
   FaRegComment,
   FaPaperPlane,
   FaRegBookmark,
+  FaBookmark,
+  FaTimes,
 } from "react-icons/fa";
 
 import "../css/post.css";
@@ -54,10 +57,19 @@ const posts = [
 ];
 
 function PostCard({ post }) {
+
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(125);
 
+  const [saved, setSaved] = useState(false);
+
+  const [shareOpen, setShareOpen] = useState(false);
+
+  // Comments Open / Close
+  const [commentsOpen, setCommentsOpen] = useState(false);
+
   const handleLike = () => {
+
     if (liked) {
       setLikes(likes - 1);
     } else {
@@ -67,16 +79,24 @@ function PostCard({ post }) {
     setLiked(!liked);
   };
 
+  const handleSave = () => {
+    setSaved(!saved);
+  };
+
   return (
     <div className="post">
+
       {/* Header */}
       <div className="post-header">
+
         <img
           src={post.profile}
           alt={post.username}
           className="profile-img"
         />
+
         <h4>{post.username}</h4>
+
       </div>
 
       {/* Post Image */}
@@ -88,36 +108,117 @@ function PostCard({ post }) {
 
       {/* Icons */}
       <div className="post-icons">
+
         <div className="left-icons">
+
+          {/* Like */}
           <span onClick={handleLike}>
-            {liked ? <FaHeart className="liked" /> : <FaRegHeart />}
+            {liked ? (
+              <FaHeart className="liked" />
+            ) : (
+              <FaRegHeart />
+            )}
           </span>
 
-          <FaRegComment />
-          <FaPaperPlane />
+          {/* Comment */}
+          <span
+            className="comment-icon"
+            onClick={() => setCommentsOpen(!commentsOpen)}
+          >
+            <FaRegComment />
+          </span>
+
+          {/* Share */}
+          <span
+            className="share-icon"
+            onClick={() => setShareOpen(true)}
+          >
+            <FaPaperPlane />
+          </span>
+
         </div>
 
-        <FaRegBookmark />
+        {/* Save */}
+        <span
+          className="save-icon"
+          onClick={handleSave}
+        >
+          {saved ? (
+            <FaBookmark className="saved" />
+          ) : (
+            <FaRegBookmark />
+          )}
+        </span>
+
       </div>
 
       {/* Likes */}
-      <p className="likes">{likes} likes</p>
+      <p className="likes">
+        {likes} likes
+      </p>
 
       {/* Caption */}
       <p className="caption">
-        <strong>{post.username}</strong> {post.caption}
+        <strong>{post.username}</strong>{" "}
+        {post.caption}
       </p>
 
-      <Comments/>
+      {/* Comments */}
+      {commentsOpen && (
+        <div className="comments-container">
+          <Comments />
+        </div>
+      )}
+
+      {/* Share Popup */}
+      {shareOpen && (
+
+        <div className="share-overlay">
+
+          <div className="share-box">
+
+            <div className="share-header">
+
+              <h3>Share Post</h3>
+
+              <FaTimes
+                className="close-share"
+                onClick={() => setShareOpen(false)}
+              />
+
+            </div>
+
+            <div className="share-options">
+
+              <button>📱 WhatsApp</button>
+
+              <button>📸 Instagram</button>
+
+              <button>💬 Message</button>
+
+              <button>📋 Copy Link</button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      )}
+
     </div>
   );
 }
 
 function Post() {
+
   return (
     <>
       {posts.map((post) => (
-        <PostCard key={post.id} post={post} />
+        <PostCard
+          key={post.id}
+          post={post}
+        />
       ))}
     </>
   );
