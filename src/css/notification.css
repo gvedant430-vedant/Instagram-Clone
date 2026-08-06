@@ -1,60 +1,306 @@
-.notifications-container{
-    max-width:600px;
-    margin:30px auto;
-    background:#fff;
-    border:1px solid #dbdbdb;
-    border-radius:10px;
-    padding:20px;
-}
+/* =========================
+   NOTIFICATION LAYOUT
+========================= */
 
-.notifications-container h2{
-    margin-bottom:20px;
-    font-size:24px;
-    border-bottom:1px solid #eee;
-    padding-bottom:10px;
-}
-
-.notification-card{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    padding:15px;
-    border-bottom:1px solid #eee;
-    transition:0.3s;
-}
-
-.notification-card:hover{
-    background:#f8f8f8;
-}
-
-.notification-avatar{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-.notification-text{
-    flex:1;
-}
-
-.notification-text p{
-    margin:0;
-    font-size:15px;
-}
-
-.notification-time{
-    color:gray;
-    font-size:13px;
-    margin-top:5px;
-}
-.notification-layout{
+.notification-layout {
     display: flex;
+
+    width: 100%;
+
+    min-height: calc(100vh - 70px);
+
+    box-sizing: border-box;
 }
 
-.notifications-container{
-    margin-left: 250px;   /* Sidebar width */
+
+/* =========================
+   NOTIFICATIONS CONTAINER
+========================= */
+
+.notifications-container {
+    width: 600px;
+
+    max-width: 600px;
+
+    margin-left: 250px;
+
     margin-top: 20px;
-    width: 100%;
+
+    margin-bottom: 30px;
+
+    background: #fff;
+
+    border: 1px solid #dbdbdb;
+
+    border-radius: 10px;
+
     padding: 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.notifications-container h2 {
+    margin: 0 0 20px;
+
+    font-size: 24px;
+
+    border-bottom: 1px solid #eee;
+
+    padding-bottom: 10px;
+
+    color: #262626;
+}
+
+
+/* =========================
+   NOTIFICATION CARD
+========================= */
+
+.notification-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border-bottom: 1px solid #eee;
+
+    transition: 0.3s;
+
+    box-sizing: border-box;
+}
+
+.notification-card:hover {
+    background: #f8f8f8;
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.notification-avatar {
+    width: 50px;
+
+    height: 50px;
+
+    min-width: 50px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.notification-text {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.notification-text p {
+    margin: 0;
+
+    font-size: 15px;
+
+    color: #262626;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   TIME
+========================= */
+
+.notification-time {
+    color: gray;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+
+    display: block;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .notifications-container {
+        margin-left: 220px;
+
+        width: calc(100% - 250px);
+
+        max-width: 600px;
+
+        padding: 18px;
+    }
+
+}
+
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .notifications-container {
+        margin-left: 200px;
+
+        width: calc(100% - 220px);
+
+        max-width: 600px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .notification-layout {
+        display: block;
+
+        min-height: calc(100vh - 60px);
+    }
+
+    .notifications-container {
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-left: 0;
+
+        margin-top: 15px;
+
+        margin-bottom: 70px;
+
+        padding: 15px;
+
+        border-left: none;
+
+        border-right: none;
+
+        border-radius: 0;
+    }
+
+    .notifications-container h2 {
+        font-size: 21px;
+
+        margin-bottom: 15px;
+    }
+
+    .notification-card {
+        padding: 13px 5px;
+
+        gap: 12px;
+    }
+
+    .notification-avatar {
+        width: 45px;
+
+        height: 45px;
+
+        min-width: 45px;
+    }
+
+    .notification-text p {
+        font-size: 14px;
+    }
+
+    .notification-time {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .notifications-container {
+        padding: 10px;
+    }
+
+    .notifications-container h2 {
+        font-size: 20px;
+
+        padding-bottom: 8px;
+    }
+
+    .notification-card {
+        padding: 12px 3px;
+
+        gap: 10px;
+    }
+
+    .notification-avatar {
+        width: 42px;
+
+        height: 42px;
+
+        min-width: 42px;
+    }
+
+    .notification-text p {
+        font-size: 13px;
+    }
+
+    .notification-time {
+        font-size: 11px;
+
+        margin-top: 3px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+    .notifications-container {
+        padding: 8px;
+    }
+
+    .notification-card {
+        gap: 8px;
+    }
+
+    .notification-avatar {
+        width: 38px;
+
+        height: 38px;
+
+        min-width: 38px;
+    }
+
+    .notification-text p {
+        font-size: 12px;
+    }
+
 }

@@ -1,121 +1,279 @@
-/* Sidebar */
+/* =========================
+   SIDEBAR
+========================= */
 
 .sidebar {
-  position: fixed;
+    position: fixed;
 
-  left: 0;
-  top: 0;
+    left: 0;
+    top: 0;
 
-  width: 240px;
-  height: 100vh;
+    width: 240px;
 
-  background: #fff;
+    height: 100vh;
 
-  border-right: 1px solid #dbdbdb;
+    background: #fff;
 
-  padding: 25px 15px;
+    border-right: 1px solid #dbdbdb;
 
-  box-sizing: border-box;
+    padding: 25px 15px;
 
-  display: flex;
-  flex-direction: column;
+    box-sizing: border-box;
 
-  gap: 8px;
+    display: flex;
 
-  z-index: 1000;
+    flex-direction: column;
+
+    gap: 8px;
+
+    z-index: 1000;
+
+    overflow-y: auto;
 }
 
 
-/* Menu Item */
+/* =========================
+   MENU ITEM
+========================= */
 
 .menu-item {
-  display: flex;
+    display: flex;
 
-  align-items: center;
+    align-items: center;
 
-  gap: 15px;
+    gap: 15px;
 
-  width: 100%;
+    width: 100%;
 
-  padding: 12px 15px;
+    padding: 12px 15px;
 
-  box-sizing: border-box;
+    box-sizing: border-box;
 
-  border-radius: 8px;
+    border-radius: 8px;
 
-  text-decoration: none;
+    text-decoration: none;
 
-  color: #262626;
+    color: #262626;
 
-  font-size: 15px;
+    font-size: 15px;
 
-  font-weight: 500;
+    font-weight: 500;
 
-  cursor: pointer;
+    cursor: pointer;
 
-  transition: background 0.2s;
+    transition: background 0.2s;
 }
 
 
-/* Icons */
+/* =========================
+   ICONS
+========================= */
 
 .menu-item svg {
-  font-size: 22px;
+    font-size: 22px;
 
-  min-width: 22px;
+    min-width: 22px;
+
+    flex-shrink: 0;
 }
 
 
-/* Hover */
+/* =========================
+   HOVER
+========================= */
 
 .menu-item:hover {
-  background: #f2f2f2;
+    background: #f2f2f2;
 }
 
 
-/* Active */
+/* =========================
+   ACTIVE
+========================= */
 
 .menu-item.active {
-  background: #f2f2f2;
+    background: #f2f2f2;
 
-  font-weight: 700;
+    font-weight: 700;
 }
 
 
-/* Logout */
+/* =========================
+   LOGOUT
+========================= */
 
 .sidebar .menu-item:last-child {
-  margin-top: auto;
+    margin-top: auto;
 }
 
 
-/* Mobile */
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 220px;
+
+        padding: 20px 12px;
+    }
+
+    .menu-item {
+        gap: 12px;
+
+        padding: 11px 12px;
+
+        font-size: 14px;
+    }
+
+    .menu-item svg {
+        font-size: 21px;
+
+        min-width: 21px;
+    }
+
+}
+
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 200px;
+
+        padding: 18px 10px;
+    }
+
+    .menu-item {
+        gap: 10px;
+
+        padding: 10px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
 
-  .sidebar {
-    width: 70px;
+    .sidebar {
+        top: auto;
 
-    padding: 20px 10px;
+        bottom: 0;
 
-    align-items: center;
-  }
+        left: 0;
 
-  .menu-item {
-    justify-content: center;
+        width: 100%;
 
-    padding: 12px;
+        height: 65px;
 
-    gap: 0;
-  }
+        padding: 8px 5px;
 
-  .menu-item div,
-  .menu-item span {
-    display: none;
-  }
+        border-right: none;
 
-  .menu-item svg {
-    font-size: 22px;
-  }
+        border-top: 1px solid #dbdbdb;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: space-around;
+
+        gap: 0;
+
+        overflow: hidden;
+    }
+
+    .menu-item {
+        width: auto;
+
+        flex: 1;
+
+        height: 50px;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 10px 5px;
+
+        gap: 0;
+
+        border-radius: 8px;
+    }
+
+    .menu-item div,
+    .menu-item span {
+        display: none;
+    }
+
+    .menu-item svg {
+        font-size: 22px;
+
+        min-width: auto;
+    }
+
+    .sidebar .menu-item:last-child {
+        margin-top: 0;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .sidebar {
+        height: 60px;
+
+        padding: 5px 3px;
+    }
+
+    .menu-item {
+        height: 50px;
+
+        padding: 8px 3px;
+    }
+
+    .menu-item svg {
+        font-size: 20px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+    .sidebar {
+        height: 58px;
+
+        padding: 4px 2px;
+    }
+
+    .menu-item {
+        height: 48px;
+    }
+
+    .menu-item svg {
+        font-size: 18px;
+    }
 
 }

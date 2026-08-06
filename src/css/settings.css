@@ -1,219 +1,417 @@
-/* Main Layout */
+/* =========================
+   SETTINGS LAYOUT
+========================= */
 
 .settings-layout {
-  display: flex;
-  min-height: 100vh;
-  background: #fafafa;
-}
+    display: flex;
 
-
-/* Settings Container */
-
-.settings-container {
-  margin-left: 280px;
-
-  width: 650px;
-
-  margin-top: 30px;
-  margin-bottom: 50px;
-
-  background: #fff;
-
-  border: 1px solid #dbdbdb;
-
-  border-radius: 10px;
-
-  padding: 25px;
-}
-
-
-/* Heading */
-
-.settings-container h2 {
-  margin: 0 0 30px;
-
-  font-size: 24px;
-
-  color: #262626;
-}
-
-
-/* Section */
-
-.settings-section {
-  margin-bottom: 30px;
-}
-
-.settings-section h3 {
-  font-size: 16px;
-
-  color: #262626;
-
-  margin-bottom: 10px;
-}
-
-
-/* Settings Item */
-
-.settings-item {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  padding: 15px 5px;
-
-  border-bottom: 1px solid #eee;
-
-  cursor: pointer;
-
-  transition: 0.2s;
-}
-
-.settings-item:hover {
-  background: #fafafa;
-}
-
-
-/* Item Text */
-
-.settings-item strong {
-  font-size: 15px;
-
-  color: #262626;
-}
-
-.settings-item p {
-  margin: 5px 0 0;
-
-  font-size: 13px;
-
-  color: #777;
-}
-
-
-/* Arrow */
-
-.settings-item > span {
-  font-size: 25px;
-
-  color: #888;
-}
-
-
-/* Toggle Switch */
-
-.switch {
-  position: relative;
-
-  width: 45px;
-
-  height: 24px;
-
-  display: inline-block;
-}
-
-.switch input {
-  display: none;
-}
-
-.slider {
-  position: absolute;
-
-  inset: 0;
-
-  background: #ccc;
-
-  border-radius: 20px;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-
-/* Toggle Circle */
-
-.slider::before {
-  content: "";
-
-  position: absolute;
-
-  width: 18px;
-
-  height: 18px;
-
-  left: 3px;
-
-  top: 3px;
-
-  background: white;
-
-  border-radius: 50%;
-
-  transition: 0.3s;
-}
-
-
-/* Checked */
-
-.switch input:checked + .slider {
-  background: #0095f6;
-}
-
-.switch input:checked + .slider::before {
-  transform: translateX(21px);
-}
-
-
-/* Logout Button */
-
-.logout-settings {
-  width: 100%;
-
-  padding: 12px;
-
-  border: none;
-
-  border-radius: 7px;
-
-  background: #ed4956;
-
-  color: white;
-
-  font-size: 15px;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: 0.2s;
-}
-
-.logout-settings:hover {
-  opacity: 0.85;
-}
-
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-  .settings-container {
-    margin-left: 0;
+    min-height: 100vh;
 
     width: 100%;
 
-    margin-top: 15px;
+    background: #fafafa;
 
-    margin-bottom: 80px;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   SETTINGS CONTAINER
+========================= */
+
+.settings-container {
+    margin-left: 280px;
+
+    width: 650px;
+
+    max-width: 650px;
+
+    margin-top: 30px;
+
+    margin-bottom: 50px;
+
+    background: #fff;
+
+    border: 1px solid #dbdbdb;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.settings-container h2 {
+    margin: 0 0 30px;
+
+    font-size: 24px;
+
+    color: #262626;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-section h3 {
+    font-size: 16px;
+
+    color: #262626;
+
+    margin: 0 0 10px;
+}
+
+
+/* =========================
+   SETTINGS ITEM
+========================= */
+
+.settings-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 5px;
+
+    border-bottom: 1px solid #eee;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    box-sizing: border-box;
+}
+
+.settings-item:hover {
+    background: #fafafa;
+}
+
+
+/* =========================
+   ITEM TEXT
+========================= */
+
+.settings-item strong {
+    font-size: 15px;
+
+    color: #262626;
+}
+
+.settings-item p {
+    margin: 5px 0 0;
+
+    font-size: 13px;
+
+    color: #777;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   ARROW
+========================= */
+
+.settings-item > span {
+    font-size: 25px;
+
+    color: #888;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   TOGGLE
+========================= */
+
+.switch {
+    position: relative;
+
+    width: 45px;
+
+    height: 24px;
+
+    display: inline-block;
+
+    flex-shrink: 0;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+
+    inset: 0;
+
+    background: #ccc;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+
+    height: 18px;
+
+    left: 3px;
+
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   CHECKED
+========================= */
+
+.switch input:checked + .slider {
+    background: #0095f6;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(21px);
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-settings {
+    width: 100%;
+
+    padding: 12px;
 
     border: none;
 
-    border-radius: 0;
+    border-radius: 7px;
 
-    padding: 20px;
-  }
+    background: #ed4956;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.logout-settings:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .settings-container {
+        margin-left: 230px;
+
+        width: calc(100% - 250px);
+
+        max-width: 650px;
+
+        padding: 22px;
+    }
+
+}
+
+
+/* =========================
+   SMALL TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .settings-container {
+        margin-left: 200px;
+
+        width: calc(100% - 220px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .settings-layout {
+        display: block;
+
+        min-height: calc(100vh - 60px);
+    }
+
+    .settings-container {
+        margin-left: 0;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        margin-top: 15px;
+
+        margin-bottom: 80px;
+
+        border: none;
+
+        border-radius: 0;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+    }
+
+    .settings-container h2 {
+        font-size: 22px;
+
+        margin-bottom: 25px;
+    }
+
+    .settings-section {
+        margin-bottom: 25px;
+    }
+
+    .settings-item {
+        padding: 14px 5px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .settings-container {
+        padding: 15px;
+
+        margin-top: 10px;
+
+        margin-bottom: 70px;
+    }
+
+    .settings-container h2 {
+        font-size: 20px;
+
+        margin-bottom: 20px;
+    }
+
+    .settings-section h3 {
+        font-size: 15px;
+    }
+
+    .settings-item {
+        gap: 10px;
+
+        padding: 13px 3px;
+    }
+
+    .settings-item strong {
+        font-size: 14px;
+    }
+
+    .settings-item p {
+        font-size: 12px;
+    }
+
+    .settings-item > span {
+        font-size: 22px;
+    }
+
+    .switch {
+        width: 42px;
+
+        height: 23px;
+    }
+
+    .slider::before {
+        width: 17px;
+
+        height: 17px;
+
+        left: 3px;
+
+        top: 3px;
+    }
+
+    .switch input:checked + .slider::before {
+        transform: translateX(19px);
+    }
+
+    .logout-settings {
+        padding: 11px;
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+    .settings-container {
+        padding: 10px;
+    }
+
+    .settings-container h2 {
+        font-size: 19px;
+    }
+
+    .settings-item strong {
+        font-size: 13px;
+    }
+
+    .settings-item p {
+        font-size: 11px;
+    }
+
+    .settings-item > span {
+        font-size: 20px;
+    }
 
 }

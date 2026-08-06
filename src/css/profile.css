@@ -1,17 +1,82 @@
+/* =========================
+   EDIT PROFILE BUTTON
+========================= */
+
 .edit-profile-btn {
-  border: none;
-  background: #efefef;
-  padding: 8px 20px;
-  border-radius: 7px;
+    border: none;
 
-  font-size: 14px;
-  font-weight: 600;
+    background: #efefef;
 
-  cursor: pointer;
+    padding: 8px 20px;
 
-  margin: 10px 0 20px;
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin: 10px 0 20px;
+
+    transition: 0.2s;
+
+    white-space: nowrap;
 }
 
 .edit-profile-btn:hover {
-  background: #dbdbdb;
+    background: #dbdbdb;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .edit-profile-btn {
+        padding: 8px 18px;
+
+        font-size: 13px;
+
+        margin: 8px 0 18px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .edit-profile-btn {
+        width: 100%;
+
+        padding: 10px 15px;
+
+        font-size: 13px;
+
+        margin: 8px 0 15px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+    .edit-profile-btn {
+        padding: 9px 12px;
+
+        font-size: 12px;
+
+        border-radius: 6px;
+    }
+
 }

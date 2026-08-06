@@ -1,84 +1,270 @@
-.navbar{
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
+
     height: 70px;
 
     background: #fff;
+
     border-bottom: 1px solid #dbdbdb;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
     padding: 0 40px;
 
     z-index: 1000;
+
     box-sizing: border-box;
 }
-.navbar-logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
+
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
 }
 
-.logo-icon{
-    font-size:30px;
+.logo-icon {
+    font-size: 30px;
 }
 
-.navbar-logo h2{
-    font-size:28px;
-    font-weight:600;
+.navbar-logo h2 {
+    font-size: 28px;
+
+    font-weight: 600;
+
+    margin: 0;
+
+    white-space: nowrap;
 }
 
-.navbar-search{
-    position:relative;
+
+/* =========================
+   SEARCH
+========================= */
+
+.navbar-search {
+    position: relative;
+
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.navbar-search input{
-    width:260px;
-    padding:10px 15px 10px 40px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    background:#f2f2f2;
-    outline:none;
+.navbar-search input {
+    width: 260px;
+
+    padding: 10px 15px 10px 40px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    background: #f2f2f2;
+
+    outline: none;
+
+    font-size: 14px;
+
+    box-sizing: border-box;
 }
 
-.search-icon{
-    position:absolute;
-    left:12px;
-    top:12px;
-    color:gray;
+.navbar-search input:focus {
+    border-color: #bbb;
+
+    background: #fff;
 }
 
-.navbar-icons{
-    display:flex;
-    align-items:center;
-    gap:25px;
-    font-size:24px;
+.search-icon {
+    position: absolute;
+
+    left: 12px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: gray;
+
+    pointer-events: none;
 }
 
-.navbar-icons a{
-    color:black;
-    text-decoration:none;
+
+/* =========================
+   NAVBAR ICONS
+========================= */
+
+.navbar-icons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    font-size: 24px;
+
+    flex-shrink: 0;
 }
 
-@media (max-width: 768px){
+.navbar-icons a {
+    color: black;
 
-    .navbar{
-        padding:10px 15px;
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+
+    transition: 0.2s;
+}
+
+.navbar-icons a:hover {
+    opacity: 0.6;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        padding: 0 25px;
     }
 
-    .navbar-search{
-        display:none;
+    .navbar-logo h2 {
+        font-size: 24px;
     }
 
-    .navbar h2{
-        font-size:22px;
+    .logo-icon {
+        font-size: 27px;
     }
 
-    .navbar-icons{
-        gap:15px;
+    .navbar-search input {
+        width: 220px;
     }
+
+    .navbar-icons {
+        gap: 18px;
+
+        font-size: 22px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 60px;
+
+        padding: 0 15px;
+    }
+
+    .navbar-search {
+        display: none;
+    }
+
+    .navbar-logo {
+        gap: 7px;
+    }
+
+    .navbar-logo h2 {
+        font-size: 21px;
+    }
+
+    .logo-icon {
+        font-size: 25px;
+    }
+
+    .navbar-icons {
+        gap: 15px;
+
+        font-size: 21px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        height: 60px;
+
+        padding: 0 10px;
+    }
+
+    .navbar-logo {
+        gap: 5px;
+    }
+
+    .navbar-logo h2 {
+        font-size: 18px;
+    }
+
+    .logo-icon {
+        font-size: 22px;
+    }
+
+    .navbar-icons {
+        gap: 10px;
+
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+    .navbar {
+        padding: 0 8px;
+    }
+
+    .navbar-logo h2 {
+        font-size: 16px;
+    }
+
+    .logo-icon {
+        font-size: 20px;
+    }
+
+    .navbar-icons {
+        gap: 8px;
+
+        font-size: 18px;
+    }
+
 }
