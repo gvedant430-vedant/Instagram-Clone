@@ -1,43 +1,65 @@
+import { useNavigate } from "react-router-dom";
+import { useProfile } from "../context/ProfileContext";
+
 import "../css/profile.css";
 
-function ProfileCard(){
-    return(
-        <div className="profile-card">
+function ProfileCard() {
 
-            <div className="profile-header">
+  const navigate = useNavigate();
 
-                <img 
-                src="https://i.pravatar.cc/150?img=10"
-                alt="profile"
-                className="profile-image"/>
+  const { profile } = useProfile();
 
-                <div>
-                    <h4>vedant</h4>
-                    <p>Frontend Developer</p>
-                </div>
-            </div>
+  return (
+    <div className="profile-card">
 
-            <div className="profile-stats">
-                <div>
-                    <h4>5</h4>
-                    <span>Posts</span>
-                </div>
-                <div>
-                    <h4>100</h4>
-                    <span>Followers</span>
-                </div>
+      {/* Profile Header */}
+      <div className="profile-header">
 
-                <div>
-                    <h4>90</h4>
-                    <span>Following</span>
-                </div>
-            </div>
+        <img
+          src={profile.image}
+          alt="profile"
+          className="profile-image"
+        />
 
-            <button className="profile-btn">
-                View Profile
-            </button>
+        <div>
+          <h4>{profile.username}</h4>
+          <p>{profile.bio}</p>
         </div>
-    );
+
+      </div>
+
+
+      {/* Stats */}
+      <div className="profile-stats">
+
+        <div>
+          <h4>5</h4>
+          <span>Posts</span>
+        </div>
+
+        <div>
+          <h4>100</h4>
+          <span>Followers</span>
+        </div>
+
+        <div>
+          <h4>90</h4>
+          <span>Following</span>
+        </div>
+
+      </div>
+
+
+      {/* View Profile */}
+      <button
+        className="profile-btn"
+        onClick={() => navigate("/profile")}
+      >
+        View Profile
+      </button>
+
+    </div>
+  );
 }
 
 export default ProfileCard;

@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { ProfileProvider } from "./context/ProfileContext";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
@@ -13,6 +13,7 @@ import EditProfile from "./pages/EditProfile";
 import Settings from "./pages/Settings";
 function App() {
   return (
+    <ProfileProvider>
     <BrowserRouter>
       <Routes>
 
@@ -54,6 +55,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </ProfileProvider>
   );
 }
 

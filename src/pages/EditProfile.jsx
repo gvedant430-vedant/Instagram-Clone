@@ -1,38 +1,41 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+
+import { useProfile } from "../context/ProfileContext";
+
 import "../css/editprofile.css";
 
 function EditProfile() {
 
   const navigate = useNavigate();
 
-  const [profile, setProfile] = useState({
-    username: "vedant",
-    name: "Vedant Gupta",
-    bio: "Frontend Developer 🚀",
-    website: "",
-  });
+  const { profile, setProfile } = useProfile();
+
+  const [formData, setFormData] = useState(profile);
 
   const handleChange = (e) => {
-    setProfile({
-      ...profile,
+
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value,
     });
+
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
 
-    alert("Profile Updated Successfully!");
+    setProfile(formData);
 
     navigate("/profile");
   };
 
   return (
-    <div className="edit-profile-page">
-
+    <>
       <Navbar />
 
       <div className="edit-profile-layout">
@@ -45,22 +48,14 @@ function EditProfile() {
 
           <form onSubmit={handleSubmit}>
 
-            {/* Profile Picture */}
-
             <div className="edit-profile-picture">
 
               <img
-                src="https://i.pravatar.cc/150?img=10"
+                src={formData.image}
                 alt="profile"
               />
 
-              <button type="button">
-                Change Profile Photo
-              </button>
-
             </div>
-
-            {/* Username */}
 
             <div className="form-group">
 
@@ -69,13 +64,11 @@ function EditProfile() {
               <input
                 type="text"
                 name="username"
-                value={profile.username}
+                value={formData.username}
                 onChange={handleChange}
               />
 
             </div>
-
-            {/* Name */}
 
             <div className="form-group">
 
@@ -84,13 +77,11 @@ function EditProfile() {
               <input
                 type="text"
                 name="name"
-                value={profile.name}
+                value={formData.name}
                 onChange={handleChange}
               />
 
             </div>
-
-            {/* Website */}
 
             <div className="form-group">
 
@@ -99,14 +90,11 @@ function EditProfile() {
               <input
                 type="text"
                 name="website"
-                placeholder="https://example.com"
-                value={profile.website}
+                value={formData.website}
                 onChange={handleChange}
               />
 
             </div>
-
-            {/* Bio */}
 
             <div className="form-group">
 
@@ -114,42 +102,25 @@ function EditProfile() {
 
               <textarea
                 name="bio"
-                rows="4"
-                maxLength="150"
-                value={profile.bio}
+                value={formData.bio}
                 onChange={handleChange}
               />
 
             </div>
 
-            {/* Buttons */}
-
-            <div className="edit-buttons">
-
-              <button
-                type="submit"
-                className="save-profile-btn"
-              >
-                Save Changes
-              </button>
-
-              <button
-                type="button"
-                className="cancel-btn"
-                onClick={() => navigate("/profile")}
-              >
-                Cancel
-              </button>
-
-            </div>
+            <button
+              type="submit"
+              className="save-profile-btn"
+            >
+              Save Changes
+            </button>
 
           </form>
 
         </main>
 
       </div>
-
-    </div>
+    </>
   );
 }
 

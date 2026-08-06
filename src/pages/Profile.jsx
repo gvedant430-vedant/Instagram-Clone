@@ -3,11 +3,15 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
+import { useProfile } from "../context/ProfileContext";
+
 import "../css/profile.css";
 
 function Profile() {
 
   const navigate = useNavigate();
+
+  const { profile } = useProfile();
 
   return (
     <>
@@ -19,17 +23,14 @@ function Profile() {
 
         <div className="profile-content">
 
-          {/* Profile Image */}
           <img
-            src="https://i.pravatar.cc/200?img=10"
+            src={profile.image}
             alt="profile"
             className="profile-avatar"
           />
 
-          {/* Username */}
-          <h2>vedant</h2>
+          <h2>{profile.username}</h2>
 
-          {/* Edit Profile Button */}
           <button
             className="edit-profile-btn"
             onClick={() => navigate("/edit-profile")}
@@ -37,7 +38,6 @@ function Profile() {
             Edit Profile
           </button>
 
-          {/* Stats */}
           <div className="profile-page-stats">
 
             <span>
@@ -54,8 +54,11 @@ function Profile() {
 
           </div>
 
-          {/* Bio */}
-          <p>Frontend Developer 🚀</p>
+          <p>{profile.bio}</p>
+
+          {profile.website && (
+            <p>{profile.website}</p>
+          )}
 
         </div>
 
